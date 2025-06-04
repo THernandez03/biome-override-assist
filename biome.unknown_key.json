@@ -1,0 +1,38 @@
+/**
+  Originally I tried to configure it like this, but for some reason the `action`
+  under `assist` was not being applied correctly.
+*/
+{
+	"$schema": "https://biomejs.dev/schemas/2.0.0-beta.6/schema.json",
+	"files": {
+		"ignoreUnknown": true,
+		"includes": ["src/**", "!**/node_modules", "!**/dist", "!**/public"]
+	},
+	"assist": {
+		"enabled": true,
+		"actions": {
+			"source": {
+				"useSortedKeys": "on"
+			}
+		}
+	},
+	"json": {
+		"assist": {
+			"enabled": true
+		}
+	},
+	"overrides": [
+		{
+			"includes": ["src/should-not-be-sorted.json"],
+			"json": {
+				"assist": {
+          "actions": {
+            "source": {
+              "useSortedKeys": "off"
+            }
+          }
+				}
+			}
+		}
+	]
+}
